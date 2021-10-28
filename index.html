@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+        <div class="pseudo-container">
+            <label for="pseudo">Pseudo</label>
+            <input type="text" autocomplete="off" id="pseudo">
+            <span></span>
+        </div>
+
+        <div class="mail-container">
+            <label for="mail">eMail</label>
+            <input type="text" autocomplete="off" id="mail">
+            <span>Email incorrect</span>
+        </div>
+
+        <div class="password-container">
+            <label for="password">Mot de passe</label>
+            <input type="password" autocomplete="off" id="password">
+            <p id="progress-bar"></p>
+            <span></span>
+        </div>
+
+        <div class="checkpassword-container">
+            <label for="checkpassword">Confirmer mot de passe</label>
+            <input type="password" autocomplete="off" id="checkpassword">
+            <span></span>
+        </div>
+
+        <input type="submit" value="Valider">
+    </form>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
