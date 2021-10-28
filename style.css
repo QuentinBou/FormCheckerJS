@@ -11,8 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(235, 244, 242);
-  background-image: url('bg.jpg');
+  background: url('bg.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -104,6 +103,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
   filter: brightness(105%);
   transform: translateX(2px);
+}
+#progress-bar{
+  transition: width 1.5s ease-out;
 }
 .error input {
   color: red;

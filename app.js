@@ -1,6 +1,6 @@
 // Infos du compte
 let pseudo, mail, password, confirmPass;
-let users = []
+let users = [];
 // Les messages
 const pseudoError = [
   "Le pseudo doit faire entre 5 et 24 caractères.",
@@ -121,15 +121,23 @@ inputs.forEach((input) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if(pseudo && mail && password && confirmPass){
-      const data = {
-          pseudo: pseudo,
-          mail: mail,
-          password: password,
-      }
-      users.push(data)
-      alert("Votre compte est désormais créer !")
+  if (pseudo && mail && password && confirmPass) {
+    const data = {
+      pseudo: pseudo,
+      mail: mail,
+      password: password,
+    };
+    users.push(data);
+    inputs.forEach((input) => {
+      input.value = null;
+      pseudo = null
+      mail = null
+      password = null
+      confirmPass = null
+      progressBar.classList.remove('progressRed', 'progressBlue', 'progressGreen')
+    });
+    alert("Votre compte est désormais créer !");
   } else {
-      alert("Les champs du formulaire ne sont pas correctement renseignés.")
+    alert("Les champs du formulaire ne sont pas correctement renseignés.");
   }
 });
