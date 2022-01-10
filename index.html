@@ -13,32 +13,29 @@
         <div class="pseudo-container">
             <label for="pseudo">Pseudo</label>
             <input type="text" autocomplete="off" id="pseudo">
-            <span></span>
         </div>
 
         <div class="mail-container">
             <label for="mail">eMail</label>
             <input type="text" autocomplete="off" id="mail">
-            <span>Email incorrect</span>
         </div>
 
         <div class="password-container">
             <label for="password">Mot de passe</label>
             <input type="password" autocomplete="off" id="password">
             <p id="progress-bar"></p>
-            <span></span>
         </div>
 
         <div class="checkpassword-container">
             <label for="checkpassword">Confirmer mot de passe</label>
             <input type="password" autocomplete="off" id="checkpassword">
-            <span></span>
         </div>
 
         <input type="submit" value="Valider">
     </form>
 
 
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
