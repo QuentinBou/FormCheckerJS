@@ -8,7 +8,7 @@ const pseudoError = [
 ];
 const emailError = "Adresse email incorrect.";
 const passwordError = [
-  "Votre mot de passe doit contenir au moins 8 caractères, 1 Nombre, 1 majuscules et 1 minuscules.",
+  "Votre mot de passe doit contenir au moins 8 caractères, 1 Nombre, 1 majuscules, 1 minuscules et un caractère spécial.",
   "Votre mot de passe ne correspond pas.",
 ];
 
@@ -63,7 +63,7 @@ const emailCheck = (value) => {
 };
 
 const passwordCheck = (value) => {
-  if (!value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/)) {
+  if (!value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)) {
     errorDisplay("password", passwordError[0]);
     passwordCont.style.marginTop = "30px";
     password = null;
@@ -85,7 +85,7 @@ const passwordCheck = (value) => {
           progressBar.classList.replace("progressBlue", "progressGreen");
         }
       }
-  } else {
+  } else if(value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)){
     errorDisplay("password", "", true);
     passwordCont.style.marginTop = "";
     password = value;
