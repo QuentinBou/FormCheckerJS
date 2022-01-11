@@ -152,5 +152,13 @@ form.addEventListener("submit", (e) => {
         }
       }
     }
+    
+    for (let inp of inputs) {
+      if (inp.value == ""){
+        inp.style.border = '1px solid red'
+      } else {
+        inp.style.border = 'none'
+      }
+    }
 })
 
