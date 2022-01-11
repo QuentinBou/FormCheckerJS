@@ -121,28 +121,36 @@ passwordInp.addEventListener('input', e => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (pseudoCheck()){
-    if (emailCheck()){
-      if (passwordCheck()){
-        if (confPasswordCheck()) {
-          const data = {
-            pseudo: pseudo,
-            mail: mail,
-            password: confirmPass,
-          };
-          users.push(data);
-          inputs.forEach((input) => {
-            input.value = null;
-            pseudo = null
-            mail = null
-            password = null
-            confirmPass = null
-            progressBar.classList.remove('progressRed', 'progressBlue', 'progressGreen')
-          });
-          createSuccess()
+  if (pseudoInp.value == "" || emailInp.value == "" || passwordInp.value == "" || confirmInp.value == ""){
+    Swal.fire({
+      position: 'center',
+      timer: 3500,
+      timerProgressBar: true,
+      title: "Veuillez remplir les champs obligatoire...",
+      icon: "warning"
+    })
+  } else if (pseudoCheck()){
+      if (emailCheck()){
+        if (passwordCheck()){
+          if (confPasswordCheck()) {
+            const data = {
+              pseudo: pseudo,
+              mail: mail,
+              password: confirmPass,
+            };
+            users.push(data);
+            inputs.forEach((input) => {
+              input.value = null;
+              pseudo = null
+              mail = null
+              password = null
+              confirmPass = null
+              progressBar.classList.remove('progressRed', 'progressBlue', 'progressGreen')
+            });
+            createSuccess()
+          }
         }
       }
     }
-  }
 })
 
