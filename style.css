@@ -1,3 +1,29 @@
+:root {
+    --blue: #0c66ff;
+    --indigo: #6e00ff;
+    --purple: #510fa8;
+    --pink: #f074ad;
+    --red: #f25767;
+    --orange: #ffbe3d;
+    --yellow: #ffc431;
+    --green: #5cc9a7;
+    --teal: #50b5ff;
+    --cyan: #4bd6e5;
+    --white: #fff;
+    --gray: #c0ccda;
+    --gray-dark: #3c4858;
+    --primary: #0c66ff;
+    --secondary: #8492a6;
+    --success: #5cc9a7;
+    --info: #50b5ff;
+    --warning: #ffbe3d;
+    --danger: #f25767;
+    --light: #2a3d53;
+    --dark: #253649;
+    --neutral: #273444;
+    --white: #fff;
+}
+
 * {
   font-family: cursive;
   margin: 0;
@@ -67,6 +93,15 @@ input[type="password"]:focus {
 .error-input:focus{
   border: 1px solid red !important;
 }
+.error-span {
+  margin-bottom: 20px;
+  display: block;
+  font-size: 0.8rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  color: red;
+}
 p {
   background: red;
   width: 33%;
@@ -90,13 +125,15 @@ input[type="submit"] {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: 0.3s ease;
+  color: var(--green);
+  
 }
 input[type="submit"]:hover {
   filter: brightness(105%);
   transform: translateX(2px);
 }
 #progress-bar{
-  transition: width 1.1s ease-out;
+  transition: width 1.5s ease-out;
 }
 .error input {
   color: red;
